@@ -16,20 +16,12 @@ $(document).ready( function( ) {
 	// append newly created elements
 	$("body").append(counterText).append(counterBox);
 
-	var focusCount = 0;
-	var textArea = $("textarea").val();
+	// add a change listener that updates word count
+	$("textarea").on("change", function(){
+		var strArray = $("textarea").split("");
 
-	// add a focus listener that updates word count
-	$("textarea").on("focus", function(){
-		// NEEDS FIXING BELOW
-		
-		if (textArea != " ") {
 		// gets the value in the textarea and split it's
-		// content by a space
-			var strArray = textArea.split(" ");
-			$("#counterBox").html(strArray.length);
-		}
-		//focusCount++;
+		// content by a space 
 	});
 	
 });
