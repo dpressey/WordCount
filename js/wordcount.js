@@ -7,21 +7,28 @@ $(document).ready( function( ) {
 		$(this).fadeTo(100, 1);
 	});
 
+	// fading the italicized header
+	$("h4").on("mouseenter", function (){
+		$(this).fadeTo(100, 0.5);
+	});
+	$("h4").on("mouseleave", function (){
+		$(this).fadeTo(100, 1);
+	});
+
 	//create counter box
 	var counterBox = "<div id=\"counterBox\"></div>";
 
 	// create counter text
-	var counterText = "<p>Total Word Count is: </p>";
+	var counterText = "<p>Total Word Count: </p>";
 
 	// append newly created elements
 	$("body").append(counterText).append(counterBox);
 
-	// add a change listener that updates word count
+	// add a change listener that updates letter count
 	$("textarea").on("change", function(){
-		var strArray = $("textarea").split("");
-
-		// gets the value in the textarea and split it's
-		// content by a space 
+		var letterArray = $("textarea").val().split(' ');
+		alert(letterArray);
+		$("#counterBox").html(letterArray.length);
 	});
 	
 });
