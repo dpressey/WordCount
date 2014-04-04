@@ -27,7 +27,6 @@ $(document).ready( function( ) {
 	// add a change listener that updates letter count
 	$("textarea").on("change", function(){
 		var letterArray = $("textarea").val().split(' ');
-		alert(letterArray);
 		$("#counterBox").html(letterArray.length);
 	});
 	
